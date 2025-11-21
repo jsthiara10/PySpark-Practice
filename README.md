@@ -1,21 +1,74 @@
-# **PySpark Taxi Data Project (In-Development)**
+# **PySpark to MySQL Taxi Data Project (In-Development)**
 
-**This project transforms 3 million records for Taxi Data in New York City using PySpark**
+**This project transforms 3 million records for Taxi Data in New York City using PySpark, and writes them to MySQL using a scheduled cron job**
 
 ![Apache Spark Logo](images/apache-spark-logo.png)
+![MySQL Logo](images/my-sql-logo.png)
 
-**Technologies Used:**
+
+# **Overview**
+
+The purpose of this project is to mimic a production-grade Extract, Transform & Load (ETL) Pipeline which uses parallel processing to
+transform and write approximately 3 million records using PySpark, to a MySQL database
+
+Data Engineers often have to use parallel processing when transforming large datasets and utlising Apache Spark is one such way to achieve this.
+Additionally, engineers may often automate large jobs to run out-of-hours schedule, to minimise strain on database capacity during peak hours.
+
+Spark works well with Python using the PySpark library, which is used for data transformation in this pipeline. Additionally, a cron job is a simple way to
+schedule data pipelines that have few or no dependencies on other ETL jobs - such as this pipeline.
+
+This project transforms a large dataset containing around 3 million records for Yellow Taxi Data in New York City, for the month of January 2025
+
+# Architecture 
+
+TBC
+
+# Technologies Used:
 
 **PySpark**
 
-**Python 3.9**
+**MySQL 9.5**
+
+**Python 3.9** (to use with Spark)
+
+**Java 17** (to use with Spark)
+
+**Linux** (for cron job)
 
 
-##  **Instructions**
+# **Set Up**
 
-**1. Clone (and optionally, fork) this repository**
+## **Part 1 - MySQL**
 
-**2. Install the requirements - you will need to download Spark separately for your respective OS.**
+**Download MySQL Community Server 9.5.0 for your respective OS here:**
+
+https://dev.mysql.com/downloads/mysql/
+
+**Download MySQL Connector/J 9.5.0 (so Spark can connect to MySQL)**
+
+https://dev.mysql.com/downloads/connector/j/
+
+Once downloaded, go through the instructions and set up your ROOT user
+
+You can also create a separate user if you so desire, but for the purposes of this project we'll be using Root
+
+Once Root User and Password are set up, please add the following to your PATH variables 
+
+* MySQL Version
+* MySQL Root User
+* MySQL Root Password
+
+This process will vary depending on your OS system but this will allow us to use relative paths and avoid hard-coding credentials
+
+## **Part 2 - Spark, Python, Java**
+
+**Spark requires you to have a supported Java version installed (8, 11, 17 - version 17 has been used for this project)**
+
+You can download the appropriate Java version here: https://www.java.com/en/
+
+**We will also be using Python 3.9 in order for PySpark to work**
+
+Please download Python 3.9 here: https://www.python.org/downloads/
 
 **Please consult the following links to download Spark/setup Spark on your personal machine**
 
@@ -25,7 +78,15 @@ https://spark.apache.org/downloads.html
 
 **Mac Set Up:** https://www.youtube.com/watch?v=OGHyEXrvkF0
 
-**3. Setup a virtual environment, using **Python 3.9 (Important)****
+## Part 3 - Repo & Virtual Environment  ##
+
+**1. Clone (and optionally, fork) this repository**
+
+**2. Setup a virtual environment, using **Python 3.9 (Important)****
+
+To avoid dependency conflict, we'll be using a Virtual Environment
+
+Open your IDE of choice and navigate to the project directory
 
 Give your virtual environment an appropriate name, such as venv or spark39
 
@@ -79,7 +140,17 @@ cd [your-project-directory]
 
 Using the following link, **download the Parquet file** we will perform our ETL process on
 
-https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page (UPDATE with pictures)
+https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page 
+
+Scroll down and click on the link for **Yellow Taxi Trip Records for January 2025**, to download the Parquet file
+
+![Parquet file](images/taxi-download.png)
 
 Once you've downloaded the file, **drag & drop to the raw folder** (alternatively, download directly to raw folder)
+
+# **Configure Cron Job**
+
+TBC
+
+
 
