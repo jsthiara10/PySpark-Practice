@@ -5,9 +5,10 @@ import pyspark.sql.functions as F
 from pyspark.sql.functions import col, trim, round
 from utils import username, password, jdbc_url, table_name, RAW_DIR, CLEAN_DIR, RAW_FILE, CLEAN_FILE
 
+
 ### EXTRACT ###
 
-def pipeline():
+def pipeline():  # Edit the config as per where your MySQL-Connector-J is located
     spark = SparkSession.builder \
         .appName("PySpark_Taxi_NYC") \
         .config("spark.jars", "/Users/jsthiara/Desktop/mysql-connector-j-9.5.0/mysql-connector-j-9.5.0.jar") \
@@ -77,7 +78,7 @@ def load(new_df):  # Create a SINGLE Parquet file using coalesce
 
     # Load into MySQL Database
 
-    new_df = new_df.repartition(4) # Number of parallel partitions
+    new_df = new_df.repartition(4)  # Number of parallel partitions
     new_df.write \
         .format("jdbc") \
         .option("url", jdbc_url) \
