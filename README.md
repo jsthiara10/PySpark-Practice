@@ -1,11 +1,10 @@
-# **PySpark to MySQL Taxi Data Project (In-Development)**
+# **PySpark to MySQL Taxi Data Project **
 
 **This project transforms 3 million records for Taxi Data in New York City using PySpark, and writes them to MySQL**
 
-![Apache Spark Logo](images/apache-spark-logo.png)
+![pyspark-diagram](images/pyspark-diagram-2.png)
 
-
-# **Overview**
+# **Overview & Architecture**
 
 The purpose of this project is to mimic a production-grade Extract, Transform & Load (ETL) Pipeline which uses parallel processing to
 transform and write approximately 3 million records using PySpark, to a MySQL database
@@ -16,11 +15,9 @@ Spark works well with Python using the PySpark library, which is used for data t
 
 This project transforms a large dataset containing around 3 million records for Yellow Taxi Data in New York City, for the month of January 2025.
 
-# Architecture 
+# Architecture
 
-![pyspark-diagram-1](images/pyspark-diagram-1.png)
-
-The ingestion layer comprises of 3 million records related to Yellow Taxi data in New York City contained in a Parquet file.
+The ingestion layer consists of a Parquet file containing 3 million records related to Yellow Taxi data in New York City.
 
 At the transformation layer, data cleansing will occur via PySpark which will normalise data, perform rounding of numerical values, drop nulls and much more - you are also free to add your own transformations to the source code if you so wish.
 
@@ -214,8 +211,7 @@ LIMIT 1000
 
 **You should see some data that has been added to our table**
 
-![SQL Records](images/my-sql-data.jpg)
-
+<img src="images/my-sql-data.png" width="300" />
 
 **You can also validate changes as per our specified transformations** 
 
