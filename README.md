@@ -4,7 +4,7 @@
 
 ![pyspark-diagram](images/architecture-diagram.png)
 
-# **Overview & Architecture**
+# **Overview**
 
 The purpose of this project is to mimic a production-grade Extract, Transform & Load (ETL) Pipeline which uses parallel processing to
 transform and write approximately 3 million records using PySpark, to a MySQL database
@@ -34,7 +34,7 @@ At the analytics layer, there will be clean data ready for Business Intelligence
 **Java 17** (to use with Spark)
 
 
-# **Set Up:**
+# **Set Up**
 
 ## **Part 1 - MySQL**
 
