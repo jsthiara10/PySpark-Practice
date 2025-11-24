@@ -188,7 +188,6 @@ Scroll down and click on the link for **Yellow Taxi Trip Records for January 202
 Once you've downloaded the file, **drag & drop to the raw folder** (alternatively, download directly to raw folder)
 
 
-
 **7. Run the pipeline**
 
 In your terminal run the following command
@@ -211,7 +210,7 @@ LIMIT 1000
 
 **You should see some data that has been added to our table**
 
-<img src="images/my-sql-data.png" width="300" />
+![sql-records](images/my-sql-data.jpg)
 
 **You can also validate changes as per our specified transformations** 
 
