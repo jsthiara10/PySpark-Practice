@@ -1,4 +1,4 @@
-# **PySpark to MySQL Taxi Data Project **
+# PySpark to MySQL Taxi Data Project 
 
 **This project transforms 3 million records for Taxi Data in New York City using PySpark, and writes them to MySQL**
 
